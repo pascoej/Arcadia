@@ -1,0 +1,5 @@
+To start, run python3 server.py inside termproject folder, install any libraries mentioned in errors. I think (tornado,timeout-decorator,pypng)
+
+The server is not designed to be run on a laptop with chrome running at the 
+same time, low performance may occur in this situation. I prefer a dedicated
+server like the one that I have in the defaults in the client. CMU / AWS.

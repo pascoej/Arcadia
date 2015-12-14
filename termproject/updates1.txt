@@ -1,0 +1,21 @@
+Changed js library to phaser / pixijs
+Added ai
+Added more serialized map info (can add buildings via config.json)
+Some smoothness fixes, still choppy in certain situatons/browsers
+More sprites, more object heierchy, including support for different champions
+AI structure extendable etc
+More packets!
+Chat enabled, commands enabled
+/spell blink and /spell paralyze enabled
+/spin for lulz
+A schedular for doing things in the future sync
+More high res collision map, but worse search performance atm
+Entities can move aronud small walls, search limited to 150ms
+Still lots of debug
+Proper Axis Aligned Bounded Boxes, including collision detection 
+Entities bouce back when hitting eachother
+Doesn't move into entity when you click them anymore
+You can win (Destroy the oyster at the end of each side)
+Names and teams support!
+Other things probbaly
+Considerable progress!!

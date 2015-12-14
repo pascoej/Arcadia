@@ -1,0 +1,28 @@
+{"packetType":"Login","username":"ouea","team":"blue","champ":"ghost"}
+{'champ': 'ghost', 'packetType': 'Login', 'username': 'ouea', 'team': 'blue'}
+wtfs
+connected client 1 ouea
+{"packetType":"SetTarget","x":1227.5,"y":1924.5}
+{'packetType': 'SetTarget', 'y': 1924.5, 'x': 1227.5}
+packet: <packets.SetTargetPacket object at 0x10eda8c50>
+naive (31, 62) (38, 60)
+ERROR:tornado.application:Uncaught exception in /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/tornado/websocket.py", line 417, in _run_callback
+    callback(*args, **kwargs)
+  File "/Users/john/Dropbox/termproject/termproject/server.py", line 14, in on_message
+    game.onMsg(self.clientId,message)
+  File "/Users/john/Dropbox/termproject/termproject/game.py", line 69, in onMsg
+    self.playersByClient[clientId].handleWSMessage(message)
+  File "/Users/john/Dropbox/termproject/termproject/entity.py", line 268, in handleWSMessage
+    super().handleWSMessage(message)
+  File "/Users/john/Dropbox/termproject/termproject/entity.py", line 225, in handleWSMessage
+    self.goal.calculatePath(self.position)
+  File "/Users/john/Dropbox/termproject/termproject/entity.py", line 172, in calculatePath
+    self.path = findPath(self.game.map,currentLocation,self.goalLocation)
+  File "/Users/john/Dropbox/termproject/termproject/util.py", line 123, in findPath
+    naivePath = findNaivePath(mapdata,startVector,goalVector)
+  File "/Users/john/Dropbox/termproject/termproject/util.py", line 144, in findNaivePath
+    rawPath.append(start[0],start[1])
+TypeError: append() takes exactly one argument (2 given)
+removing player 1

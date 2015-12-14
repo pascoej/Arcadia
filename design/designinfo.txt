@@ -1,0 +1,29 @@
+I used websockets using tornado for communication. The entity file
+hold all the things related to things on screen. Everything is represented as 
+an entity (even light beams). I use Axis-Aligned bounding boxes in util.py
+as well as many othe utility functions to make the magic happen. Any borrowed 
+functions have a comment at the top noting their source. I parse the map data 
+dynamically and send the availiable spells etc to the client. It's possible to 
+have significant server updates with no client updates which is nice. Collision
+png are parsed into arrays which are then scaled to the map size to detect 
+collisions with the map. Entities do bounce off eachother with the exception of 
+minions.
+
+
+From a broad view it has standard server client model with some level of 
+client prediction (server sends the current velocities so client can predict
+for smooth movement). Everything is a packet, you can see in packets.py. 
+They aren't actually packets, but rather json specifications for the interchange
+format.
+
+The server.py file basically starts the web socket and initializes a game instance
+the game instance acts as a manager, and holds various data relating to the 
+entities, map, collision data, etc. 
+
+Spatial.py does some work with collision detection in a fairly efficennt matter
+using hashing to group objects into grid based bins. 
+
+The user interface is built to mimic the league of legends interface, though
+it is significantly different. I think it's fairly user friendly with spells
+being clickable as well as showing their hotkey well. Opening chat with enter is
+less intutitive, but normal for people who are familar with this game.
